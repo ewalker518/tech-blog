@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
+  <title>Some Kinda Tech Blog</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -12,8 +12,19 @@
 <body>
   <div class="wrapper">
     <header>
+      <div>
+            <nav class"nav">
+                    <a class="link" href="/">Home</a>
+                    <a class="link" href="/dashboard">Dashboard</a>
+                    {{#if loggedIn}}
+                    <a class="link" href="/" id="logout">Log Out</a>
+                    {{else}}
+                    <a class="link" href="/login">Log In</a>
+                    {{/if}}
+                </nav>          
+          </div>
       <h1>
-         <a href="/">Some Kind of Tech Blog</a> {{!-- might rename it and make it a blog about something else... --}}
+         Some Kinda Tech Blog {{!-- might rename it and make it a blog about something else... --}}
       </h1>
     </header>
     <main>
