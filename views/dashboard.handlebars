@@ -1,5 +1,9 @@
 <section>
-  <h2>Your Posts</h2>
+  <a href="/dashboard/create/"><button id="new-post" class="button">New Post</button></a>
+</section>
+
+<section>
+  <h2>Posts by {{user.username}}</h2>
     {{#each posts as |post|}}
       <div class="card">
         <div class="card-header">
