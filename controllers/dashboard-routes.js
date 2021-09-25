@@ -70,6 +70,4 @@ router.get('/create', (req, res) => {
     res.render('new-post');
 });
 
-
-
 module.exports = router;

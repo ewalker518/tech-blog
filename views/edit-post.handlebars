@@ -1,0 +1,13 @@
+<a href="/dashboard" class="nav">Return to Dashboard</a>
+    
+<div class="card">
+    <h2 class="card-header card-title">Create A New Post</h3>
+        <form class="card-body edit-post-form">
+            <label for="post-title">Title</label>
+            <input name="post-title" type="text" value="{{post.title}}" class="form-input" />
+            <label for="post-text">Text</label>
+            <input name="post-text" type="text" value="{{post.content}}" class="form-input" />
+            <button type="submit" class="btn">Update Post</button>
+            <button type="button" class="delete btn">Delete</button>
+        </form>
+</div>
