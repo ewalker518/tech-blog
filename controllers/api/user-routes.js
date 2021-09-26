@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'created_at']
+        attributes: ['id', 'title', 'content', 'created_at']
       },
       {
         model: Comment,
@@ -93,6 +93,10 @@ router.post('/login', (req, res) => {
   
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
@@ -108,8 +112,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-
-  // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
     where: {
