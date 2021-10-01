@@ -54,6 +54,7 @@ router.get('/', (req, res) => {
       },
       attributes: [
         'id',
+        'user_id',
         'title',
         'content',
         'created_at',
@@ -77,6 +78,7 @@ router.get('/', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' })
       }
       const post = dbPostData.get({ plain: true });
+      console.log(post);
       res.render('single-post', { post, loggedIn: req.session.loggedIn });
     }).catch(err => {
       console.log(err);

@@ -1,25 +1,6 @@
 <h3 class="header">{{post.title}}</h3>
 
-<div class="card post">
-    <div class="card-header">
-        <p>Posted by {{user.username}} on {{format_date created_at}}</p>
-    </div>
-    <div class="card-body">
-        <p>{{post.content}}</p>
-    </div>
-
-    {{#each comment}}
-    <div class="card comment">
-        <h4 class="card-header">Comments:</h4>
-        <div class="content">
-            {{comment_text}}
-        </div>
-        <div>
-            {{user.username}}, {{format_date created_at}}
-        </div>
-    </div>
-    {{/each}}
-</div>
+{{> post-info post}}
 
 <form class="card-body comment-form" id="comment-form">
 

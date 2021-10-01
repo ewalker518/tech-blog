@@ -51,6 +51,7 @@ router.get('/:id', (req, res) => {
       'created_at'
     ],
     include: [
+      User,
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -59,13 +60,14 @@ router.get('/:id', (req, res) => {
           attributes: ['username']
         }
       },
-      {
-        model: User,
-        attributes: ['username']
-      }
+      // {
+      //   model: User,
+      //   attributes: ['username']
+      // }
     ]
   })
     .then(dbPostData => {
+      console.log(dbPostData);
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
