@@ -1,4 +1,5 @@
 <div class="card comment">
+    {{#each this}}
     <h4 class="card-header">Comments:</h4>
     <div class="content">
         {{comment_text}}
@@ -6,4 +7,5 @@
     <div>
         {{user.username}}, {{format_date created_at}}
     </div>
+    {{/each}}
 </div>

@@ -59,7 +59,9 @@ router.get('/', (req, res) => {
         'content',
         'created_at',
       ],
-      include: [{
+      include: [
+        User,
+        {
         model: Comment,
         attributes: [
           'id',
