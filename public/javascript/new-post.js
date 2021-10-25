@@ -4,11 +4,11 @@ async function newPostHandler(event) {
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const text = document.querySelector('input[name="post-text"]').value.trim();
 
-    const response = await fetch('/api/posts', {
+    const response = await fetch(`/api/posts`, {
         method: 'post',
         body: JSON.stringify({
             title,
-            text
+            content
         }),
         headers: { 'Content-Type': 'application/json' }
     });
@@ -20,4 +20,4 @@ async function newPostHandler(event) {
     }
 };
 
-document.querySelector('#new-post').addEventListener('submit', newPostHandler);
+document.querySelector('.new-post').addEventListener('submit', newPostHandler);
